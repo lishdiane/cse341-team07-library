@@ -305,6 +305,190 @@
           }
         }
       }
+    },
+    "/magazine/": {
+      "get": {
+        "description": "Get all magazines",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Add a new magazine",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": { "example": "any" },
+                "issueNumber": { "example": "any" },
+                "publisher": { "example": "any" },
+                "topic": { "example": "any" },
+                "publicationDate": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "401": { "description": "Unauthorized" }
+        }
+      }
+    },
+    "/magazine/{_id}": {
+      "get": {
+        "description": "Get magazine by ID",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      },
+      "put": {
+        "description": "Update magazine by ID",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": { "example": "any" },
+                "issueNumber": { "example": "any" },
+                "publisher": { "example": "any" },
+                "topic": { "example": "any" },
+                "publicationDate": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "401": { "description": "Unauthorized" }
+        }
+      },
+      "delete": {
+        "description": "Delete magazine by ID",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "401": { "description": "Unauthorized" }
+        }
+      }
+    },
+    "/digital/": {
+      "get": {
+        "description": "Get all digital media",
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      },
+      "post": {
+        "description": "Add a new digital media item",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": { "example": "any" },
+                "title": { "example": "any" },
+                "author": { "example": "any" },
+                "format": { "example": "any" },
+                "fileURL": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "401": { "description": "Unauthorized" }
+        }
+      }
+    },
+    "/digital/{_id}": {
+      "get": {
+        "description": "Get digital media by ID",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      },
+      "put": {
+        "description": "Update digital media by ID",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": { "example": "any" },
+                "title": { "example": "any" },
+                "author": { "example": "any" },
+                "format": { "example": "any" },
+                "fileURL": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "401": { "description": "Unauthorized" }
+        }
+      },
+      "delete": {
+        "description": "Delete digital media by ID",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "401": { "description": "Unauthorized" }
+        }
+      }
     }
   }
 }

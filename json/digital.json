@@ -1,0 +1,51 @@
+[
+  {
+    "type": "eBook",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "format": "ePub",
+    "fileURL": "https://www.gutenberg.org/ebooks/1342.epub.images"
+  },
+  {
+    "type": "audiobook",
+    "title": "The Adventures of Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "format": "MP3",
+    "fileURL": "https://librivox.org/the-adventures-of-sherlock-holmes-by-sir-arthur-conan-doyle/"
+  },
+  {
+    "type": "video",
+    "title": "Introduction to Programming",
+    "author": "FreeCodeCamp",
+    "format": "MP4",
+    "fileURL": "https://www.youtube.com/watch?v=rfscVS0vtbw"
+  },
+  {
+    "type": "eBook",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "format": "PDF",
+    "fileURL": "https://www.gutenberg.org/files/84/84-pdf.pdf"
+  },
+  {
+    "type": "audiobook",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "format": "MP3",
+    "fileURL": "https://librivox.org/dracula-by-bram-stoker/"
+  },
+  {
+    "type": "video",
+    "title": "Learn Python - Full Course for Beginners",
+    "author": "freeCodeCamp.org",
+    "format": "MP4",
+    "fileURL": "https://www.youtube.com/watch?v=rfscVS0vtbw"
+  },
+  {
+    "type": "eBook",
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "format": "PDF",
+    "fileURL": "https://www.gutenberg.org/files/132/132-pdf.pdf"
+  }
+]

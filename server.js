@@ -4,6 +4,9 @@ const app = express();
 const bodyParser = require("body-parser");
 const inventoryRoute = require("./routes/bookRoute");
 const accountRoute = require("./routes/accountRoute");
+// new routes
+const magazineRoute = require("./routes/magazineRoute"); 
+const digitalRoute = require("./routes/digitalRoute");   
 const route = require("./routes/index");
 const PORT = process.env.PORT;
 const passport = require("passport");
@@ -56,6 +59,9 @@ app
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 .use("/book", inventoryRoute)
 .use("/account", accountRoute)
+//new routes
+.use("/magazine", magazineRoute)
+.use("/digital", digitalRoute)
 .use("/", route);
 
 app.get("/", (req, res) => {

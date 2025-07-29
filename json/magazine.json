@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Tech Today",
+    "issueNumber": 7,
+    "publisher": "Tech Media Inc.",
+    "topic": "Technology",
+    "publicationDate": "2025-07-01"
+  },
+  {
+    "title": "Healthy Living",
+    "issueNumber": 6,
+    "publisher": "Wellness Publications",
+    "topic": "Health & Wellness",
+    "publicationDate": "2025-06-15"
+  },
+  {
+    "title": "Travel Explorer",
+    "issueNumber": 5,
+    "publisher": "Globe Trotters Ltd.",
+    "topic": "Travel",
+    "publicationDate": "2025-05-20"
+  },
+  {
+    "title": "Cooking Delights",
+    "issueNumber": 4,
+    "publisher": "Gourmet Media",
+    "topic": "Food & Cooking",
+    "publicationDate": "2025-04-10"
+  },
+  {
+    "title": "Fashion Forward",
+    "issueNumber": 3,
+    "publisher": "Style Press",
+    "topic": "Fashion",
+    "publicationDate": "2025-03-05"
+  },
+  {
+    "title": "Science Weekly",
+    "issueNumber": 2,
+    "publisher": "Knowledge Hub",
+    "topic": "Science",
+    "publicationDate": "2025-02-28"
+  },
+  {
+    "title": "Art & Culture",
+    "issueNumber": 1,
+    "publisher": "Creative Minds",
+    "topic": "Art",
+    "publicationDate": "2025-01-15"
+  }
+]
