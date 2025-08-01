@@ -1,5 +1,32 @@
 const model = require("../models");
 const magazineModel = require("../models/magazine-model");
+const { connectToMongoDB } = require("../databases/connect");
+
+async function searchMagazinesByTitle(req, res) {
+  try {
+    const client = await connectToMongoDB();
+    const db = client.db(process.env.DB_NAME || "project2"); 
+
+    const { title } = req.query;
+    if (!title) {
+      return res.status(400).json({ message: "Title query parameter is required." });
+    }
+
+    // Case-insensitive partial match for title
+    const query = { title: { $regex: title, $options: "i" } };
+
+    const magazines = await db.collection("magazines").find(query).toArray();
+
+    if (magazines.length === 0) {
+      return res.status(404).json({ message: "No magazines found matching that title." });
+    }
+
+    res.status(200).json(magazines);
+  } catch (error) {
+    console.error("Error searching magazines:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+}
 
 async function getMagazines(req, res) {
   try {
@@ -31,6 +58,7 @@ async function deleteMagazineById(req, res) {
 }
 
 module.exports = {
+  searchMagazinesByTitle,
   getMagazines,
   getMagazineById,
   addMagazine,
