@@ -4,6 +4,13 @@ const magazineController = require("../controllers/magazine");
 const validate = require("../utils/magazine-validation"); 
 const util = require("../utils");
 
+// Search filter route
+router.get(
+  "/search",
+  util.isAuthenticated,
+  util.handleErrors(magazineController.searchMagazinesByTitle)
+);
+
 router.get("/", util.handleErrors(magazineController.getMagazines));
 
 router.get("/:_id", util.handleErrors(magazineController.getMagazineById));

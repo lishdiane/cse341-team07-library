@@ -6,6 +6,13 @@ const util = require("../utils");
 
 router.get("/", util.handleErrors(bookController.getBooks));
 
+//search books by title or author
+router.get(
+  "/search",
+  util.isAuthenticated,
+  util.handleErrors(bookController.searchBooks)
+);
+
 router.get("/:_id", util.handleErrors(bookController.getBookById));
 
 router.post(
