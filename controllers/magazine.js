@@ -15,7 +15,7 @@ async function searchMagazinesByTitle(req, res) {
     // Case-insensitive partial match for title
     const query = { title: { $regex: title, $options: "i" } };
 
-    const magazines = await db.collection("magazines").find(query).toArray();
+    const magazines = await db.collection("magazine").find(query).toArray();
 
     if (magazines.length === 0) {
       return res.status(404).json({ message: "No magazines found matching that title." });
