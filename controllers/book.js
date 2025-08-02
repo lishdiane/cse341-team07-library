@@ -2,6 +2,7 @@ const model = require("../models");
 const bookModel = require("../models/books-model");
 
 async function getBooks(req, res) {
+  //#swagger.tags = ['Books']
   try {
     const inventory = await model.getAll(req, res, "book");
 
@@ -42,24 +43,28 @@ async function searchBooks(req, res) {
 
 
 async function getBookById(req, res) {
+  //#swagger.tags = ['Books']
   const inventory = await model.getOneById(req, res, "book");
 
   res.send(inventory);
 }
 
 async function addBook(req, res) {
+  //#swagger.tags = ['Books']
   const inventory = await bookModel.createNewBook(req, res);
 
   res.send(inventory);
 }
 
 async function editBookById(req, res) {
+  //#swagger.tags = ['Books']
   const inventory = await bookModel.editBook(req, res);
 
   res.send(inventory);
 }
 
 async function deleteBookById(req, res) {
+  //#swagger.tags = ['Books']
   const inventory = await model.deleteById(req, res, "book");
 
   res.send(inventory);

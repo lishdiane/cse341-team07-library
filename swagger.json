@@ -327,6 +327,7 @@
     },
     "/logout": {
       "get": {
+        "tags": ["Authentication"],
         "description": "",
         "responses": {
           "default": {

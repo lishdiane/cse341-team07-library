@@ -29,6 +29,8 @@ async function searchMagazinesByTitle(req, res) {
 }
 
 async function getMagazines(req, res) {
+  //#swagger.tags = ['Magazines']
+
   try {
     const inventory = await model.getAll(req, res, "magazine");
     res.send(inventory);
@@ -38,21 +40,29 @@ async function getMagazines(req, res) {
 }
 
 async function getMagazineById(req, res) {
+  //#swagger.tags = ['Magazines']
+
   const inventory = await model.getOneById(req, res, "magazine");
   res.send(inventory);
 }
 
 async function addMagazine(req, res) {
+  //#swagger.tags = ['Magazines']
+
   const inventory = await magazineModel.createNewMagazine(req, res);
   res.send(inventory);
 }
 
 async function editMagazineById(req, res) {
+  //#swagger.tags = ['Magazines']
+
   const inventory = await magazineModel.editMagazine(req, res);
   res.send(inventory);
 }
 
 async function deleteMagazineById(req, res) {
+  //#swagger.tags = ['Magazines']
+
   const inventory = await model.deleteById(req, res, "magazine");
   res.send(inventory);
 }

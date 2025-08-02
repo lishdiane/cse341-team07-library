@@ -4,13 +4,13 @@ const accountController = require("../controllers/account");
 const validate = require("../utils/account-validation");
 const util = require("../utils");
 
-router.get("/", util.handleErrors(accountController.getAccounts));
+router.get("/", util.isAuthenticated, util.handleErrors(accountController.getAccounts));
 
-router.get("/:_id", util.handleErrors(accountController.getAccountById));
+router.get("/:_id", util.isAuthenticated, util.handleErrors(accountController.getAccountById));
 
 router.post(
   "/",
-  util.isAuthenticated,
+  // util.isAuthenticated,
   validate.accountRules(),
   validate.checkAccountData,
   util.handleErrors(accountController.addAccount),
