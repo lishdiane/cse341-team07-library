@@ -7,6 +7,7 @@ const accountRoute = require("./routes/accountRoute");
 const magazineRoute = require("./routes/magazineRoute");
 const digitalRoute = require("./routes/digitalRoute");
 const route = require("./routes/index");
+const PORT = process.env.PORT;
 const passport = require("passport");
 const session = require("express-session");
 const GithubStrategy = require("passport-github2").Strategy;
@@ -15,19 +16,19 @@ const swaggerDocument = require("./swagger.json");
 
 /* ***********************
  * Middleware
- * ***********************/
+ * ************************/
 
-app.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(bodyParser.json());
+app
+  .use(
+    session({
+      secret: "secret",
+      resave: false,
+      saveUninitialized: true,
+    })
+  )
+  .use(passport.initialize())
+  .use(passport.session())
+  .use(bodyParser.json());
 
 passport.use(
   new GithubStrategy(
@@ -51,17 +52,20 @@ passport.deserializeUser((user, done) => {
 
 /* ***********************
  * Routes
- * ***********************/
+ *************************/
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use("/book", inventoryRoute);
-app.use("/account", accountRoute);
-app.use("/magazine", magazineRoute);
-app.use("/digital", digitalRoute);
-app.use("/", route);
+app
+  .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  .use("/book", inventoryRoute)
+  .use("/account", accountRoute)
+  //new routes
+  .use("/magazine", magazineRoute)
+  .use("/digital", digitalRoute)
+  .use("/", route);
 
 app.get("/", (req, res) => {
   console.log(req.session.user);
+
   res.send(
     req.session.user !== undefined
       ? `Logged in as ${req.session.user.username}`
@@ -86,7 +90,6 @@ app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." });
 });
 
-/* ***********************
- * Export the app ONLY
- * ***********************/
-module.exports = app;
+app.listen(PORT, () => {
+  console.log(`Web service is listening on port: ${PORT}.`);
+});
