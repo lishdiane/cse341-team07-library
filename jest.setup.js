@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 jest.mock('passport', () => ({
   use: jest.fn(),
   authenticate: () => (req, res, next) => next(),
