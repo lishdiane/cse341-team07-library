@@ -17,11 +17,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:jest": "jest --coverage",
-    "test:getroutes": "jest _tests_/getRoutes.test.js --coverage",
+    "test:getroutes": "jest __tests__/getRoutes.test.js --coverage",
     "start": "nodemon server.js",
     "format": "npx prettier --write .",
     "lint": "npx eslint .",
-    "swagger": "node ./swagger.js"
+    "swagger": "node ./swagger.js",
+    "testsample": "jest"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@types/jest": "^30.0.0",
     "eslint": "^9.32.0",
     "globals": "^16.3.0",
     "jest": "^30.0.5",
