@@ -335,17 +335,6 @@
         }
       }
     },
-    "/logout": {
-      "get": {
-        "tags": ["Authentication"],
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/magazine/": {
       "get": {
         "tags": ["Magazines"],
@@ -568,6 +557,17 @@
         "responses": {
           "200": { "description": "OK" },
           "401": { "description": "Unauthorized" }
+        }
+      }
+    },
+        "/logout": {
+      "get": {
+        "tags": ["Authentication"],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
         }
       }
     }
