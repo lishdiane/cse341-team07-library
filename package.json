@@ -21,8 +21,7 @@
     "start": "nodemon server.js",
     "format": "npx prettier --write .",
     "lint": "npx eslint .",
-    "swagger": "node ./swagger.js",
-    "testsample": "jest"
+    "swagger": "node ./swagger.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
