@@ -23,6 +23,7 @@
     },
     "/book/": {
       "get": {
+        "tags": ["Books"],
         "description": "",
         "responses": {
           "200": {
@@ -31,6 +32,7 @@
         }
       },
       "post": {
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -105,6 +107,7 @@
   },
     "/book/{_id}": {
       "get": {
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -121,6 +124,7 @@
         }
       },
       "put": {
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -170,6 +174,7 @@
         }
       },
       "delete": {
+        "tags": ["Books"],
         "description": "",
         "parameters": [
           {
@@ -191,6 +196,7 @@
     },
     "/account/": {
       "get": {
+        "tags": ["Accounts"],
         "description": "",
         "responses": {
           "200": {
@@ -199,6 +205,7 @@
         }
       },
       "post": {
+        "tags": ["Accounts"],
         "description": "",
          "parameters": [
           {
@@ -241,6 +248,7 @@
     },
     "/account/{_id}": {
       "get": {
+        "tags": ["Accounts"],
         "description": "",
         "parameters": [
           {
@@ -257,6 +265,7 @@
         }
       },
       "put": {
+        "tags": ["Accounts"],
         "description": "",
         "parameters": [
           {
@@ -309,6 +318,7 @@
         }
       },
       "delete": {
+        "tags": ["Accounts"],
         "description": "",
         "parameters": [
           {
@@ -338,6 +348,7 @@
     },
     "/magazine/": {
       "get": {
+        "tags": ["Magazines"],
         "description": "Get all magazines",
         "responses": {
           "200": {
@@ -346,6 +357,7 @@
         }
       },
       "post": {
+        "tags": ["Magazines"],
         "description": "Add a new magazine",
         "parameters": [
           {
@@ -371,6 +383,7 @@
     },
     "/magazine/{_id}": {
       "get": {
+        "tags": ["Magazines"],
         "description": "Get magazine by ID",
         "parameters": [
           {
@@ -384,7 +397,8 @@
           "200": { "description": "OK" }
         }
       },
-      "put": {
+      "put": {     
+        "tags": ["Magazines"],
         "description": "Update magazine by ID",
         "parameters": [
           {
@@ -414,6 +428,7 @@
         }
       },
       "delete": {
+        "tags": ["Magazines"],
         "description": "Delete magazine by ID",
         "parameters": [
           {
@@ -462,12 +477,14 @@
 },
     "/digital/": {
       "get": {
+        "tags": ["Digital"],
         "description": "Get all digital media",
         "responses": {
           "200": { "description": "OK" }
         }
       },
       "post": {
+        "tags": ["Digital"],
         "description": "Add a new digital media item",
         "parameters": [
           {
@@ -493,6 +510,7 @@
     },
     "/digital/{_id}": {
       "get": {
+        "tags": ["Digital"],
         "description": "Get digital media by ID",
         "parameters": [
           {
@@ -507,6 +525,7 @@
         }
       },
       "put": {
+        "tags": ["Digital"],
         "description": "Update digital media by ID",
         "parameters": [
           {
@@ -536,6 +555,7 @@
         }
       },
       "delete": {
+        "tags": ["Digital"],
         "description": "Delete digital media by ID",
         "parameters": [
           {
